@@ -16,23 +16,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.unit.dp
 
-val pinkToWhite = listOf(
-    Color(255, 105, 180),
-    Color(255, 255, 255),
-)
 
-val rgbRainbow = listOf(
-    Color.Red,
-    Color.Yellow,
-    Color.Green,
-    Color.Cyan,
-    Color.Blue,
-    Color.Magenta
-)
-
+val brush = Brush.verticalGradient(listOf(Color.Magenta, Color.White))
 //val brush = Brush.horizontalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
-val brush = Brush.verticalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
-//val brush = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
+//val brush = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.LightGray))
 
 @Composable
 @Preview
@@ -41,12 +28,9 @@ fun BrushSwatch() {
         .fillMaxSize()
         .clipToBounds()
     Canvas(modifier = drawModifier) {
-        val swatchSize = 250.dp.toPx()
         drawRect(
             brush = brush,
             style = Fill,
-            topLeft = Offset(center.x - swatchSize/2, center.y - swatchSize/2),
-            size = Size(swatchSize, swatchSize)
         )
     }
 }
@@ -66,6 +50,7 @@ fun BoxBrushSwatch() {
     )
 }
 
+
 @Composable
 @Preview
 fun ColorSwatch() {
@@ -82,5 +67,19 @@ fun ColorSwatch() {
         )
     }
 }
+
+val pinkToWhite = listOf(
+    Color(255, 105, 180),
+    Color(255, 255, 255),
+)
+
+val rgbRainbow = listOf(
+    Color.Red,
+    Color.Yellow,
+    Color.Green,
+    Color.Cyan,
+    Color.Blue,
+    Color.Magenta
+)
 
 
