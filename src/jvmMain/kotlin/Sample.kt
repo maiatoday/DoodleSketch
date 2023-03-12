@@ -3,13 +3,16 @@ import androidx.compose.ui.window.application
 import net.maiatoday.sketch.*
 
 fun main() = application {
-    Window(onCloseRequest = ::exitApplication) {
+    Window(
+        title = "Doodle Sketch Samples",
+        onCloseRequest = ::exitApplication
+    ) {
         Page {
 //            MagentaCircle()
 //            FilledBlueSquare()
-            LotsOfRainbowLines()
-            LotsOfDoughnuts()
-//            HappyHearts()
+//            LotsOfRainbowLines()
+//            LotsOfDoughnuts()
+            HappyHearts()
             HeartPulse()
         }
     }

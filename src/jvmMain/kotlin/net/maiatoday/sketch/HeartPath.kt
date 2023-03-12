@@ -163,7 +163,8 @@ fun HappyHearts() {
         .fillMaxSize()
         .clipToBounds()
     Canvas(modifier = drawModifier) {
-        for (d in dots) {
+        repeat(DOT_COUNT) {
+            val d = randomOffset(size.width.toInt(), size.height.toInt())
             translate(d.x, d.y) {
                 drawPath(heartPath, randomColor(), style = Fill)
             }
@@ -229,9 +230,3 @@ fun CandyHeart() {
         drawPath(heartPath, brush = customBrush, style = Fill)
     }
 }
-
-val heartStops = arrayOf(
-    0.0f to Color.Red,
-    0.5f to Color(255, 105, 180),
-    1f to Color.Magenta
-)
