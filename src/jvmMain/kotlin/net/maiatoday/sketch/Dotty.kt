@@ -4,8 +4,6 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Size
@@ -100,7 +98,7 @@ fun LotsOfDots() {
 }
 
 @Composable
-fun AllTheDoughnuts(choices: Choices = Choices()) {
+fun AllTheDots(choices: Choices = Choices()) {
     val drawModifier = Modifier
         .fillMaxSize()
         .clipToBounds()
@@ -110,7 +108,7 @@ fun AllTheDoughnuts(choices: Choices = Choices()) {
                 color = if (choices.rainbowDots) randomColor() else randomGrey(),
                 center = randomOffset(size.width.toInt(), size.height.toInt()),
                 radius = Random.nextInt(10, 50).toFloat(),
-                style = Stroke(width = 10f),
+                style = Fill,
             )
         }
     }

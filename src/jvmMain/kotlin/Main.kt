@@ -33,8 +33,8 @@ fun main() = application {
             .clipToBounds()
         Row(modifier = Modifier.wrapContentSize()) {
             Page(modifier = pageModifier) {
-                if (choices.showDots) AllTheDoughnuts(choices)
                 if (choices.showLines) AllTheLines(choices)
+                if (choices.showDots) AllTheDots(choices)
             }
             DoodleChoicesPanel(settingsModifier, choices) { choices = it }
         }
