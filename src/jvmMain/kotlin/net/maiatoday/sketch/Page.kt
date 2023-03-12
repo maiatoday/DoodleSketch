@@ -12,13 +12,15 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 @Preview
-fun Page(color:Color = Color.White,
-         content: @Composable BoxScope.() -> Unit) {
-    val drawModifier = Modifier
-        .fillMaxSize()
+fun Page(
+    modifier: Modifier = Modifier.fillMaxSize(),
+    color: Color = Color.White,
+    content: @Composable BoxScope.() -> Unit
+) {
+    val drawModifier = modifier
         .background(color)
         .clipToBounds()
     Box(modifier = drawModifier) {
-       content()
+        content()
     }
 }
