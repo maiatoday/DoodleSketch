@@ -24,7 +24,6 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(compose.desktop.currentOs)
-                implementation("me.nikhilchaudhari:k5-compose:1.0.1")
             }
         }
         val jvmTest by getting
