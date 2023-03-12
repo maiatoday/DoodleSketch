@@ -7,12 +7,12 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.*
 import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.compose.ui.graphics.drawscope.translate
@@ -171,12 +171,6 @@ fun HappyHearts() {
     }
 }
 
-val heartStops = arrayOf(
-    0.0f to Color.Red,
-    0.5f to Color(255, 105, 180),
-    1f to Color.Magenta
-)
-
 @Composable
 @Preview
 fun HeartPulse() {
@@ -210,3 +204,34 @@ fun HeartPulse() {
         }
     }
 }
+
+val candyColours = listOf(Color.Red, Color.Magenta, Color(255, 105, 180))
+
+@Composable
+@Preview
+fun CandyHeart() {
+    val customBrush = remember {
+        object : ShaderBrush() {
+            override fun createShader(size: Size): Shader {
+                return LinearGradientShader(
+                    colors = candyColours,
+                    from = Offset.Zero,
+                    to = Offset(heartSize.width / 4f, 0f),
+                    tileMode = TileMode.Mirror
+                )
+            }
+        }
+    }
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        drawPath(heartPath, brush = customBrush, style = Fill)
+    }
+}
+
+val heartStops = arrayOf(
+    0.0f to Color.Red,
+    0.5f to Color(255, 105, 180),
+    1f to Color.Magenta
+)

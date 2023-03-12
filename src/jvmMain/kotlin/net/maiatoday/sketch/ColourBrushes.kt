@@ -16,13 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.unit.dp
 
-val pinkShades = listOf(
-    Color(250, 0, 250),
-    Color(255, 0, 120),
-    Color(200, 3, 180),
-    Color(255, 100, 250),
-)
-
 val pinkToWhite = listOf(
     Color(255, 105, 180),
     Color(255, 255, 255),
