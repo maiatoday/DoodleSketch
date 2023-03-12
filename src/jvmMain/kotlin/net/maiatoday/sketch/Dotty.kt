@@ -4,12 +4,15 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
+import net.maiatoday.components.Choices
 import kotlin.random.Random
 
 @Composable
@@ -36,9 +39,9 @@ fun HotPinkOval() {
         .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawOval(
-            color = Color(255,105,180),
+            color = Color(255, 105, 180),
             topLeft = center,
-            size = Size(100f,50f),
+            size = Size(100f, 50f),
             style = Fill,
         )
     }
@@ -52,9 +55,9 @@ fun LimeOval() {
         .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawOval(
-            color = Color(0,255,0),
+            color = Color(0, 255, 0),
             topLeft = center,
-            size = Size(50f,150f),
+            size = Size(50f, 150f),
             style = Fill,
         )
     }
@@ -71,7 +74,7 @@ fun LotsOfDoughnuts() {
             drawCircle(
                 color = randomColor(),
                 center = dot,
-                radius = Random.nextInt(10,50).toFloat(),
+                radius = Random.nextInt(10, 50).toFloat(),
                 style = Stroke(width = 10f),
             )
         }
@@ -89,8 +92,25 @@ fun LotsOfDots() {
             drawCircle(
                 color = randomColor(),
                 center = dot,
-                radius = Random.nextInt(10,50).toFloat(),
+                radius = Random.nextInt(10, 50).toFloat(),
                 style = Fill,
+            )
+        }
+    }
+}
+
+@Composable
+fun AllTheDoughnuts(choices: Choices = Choices()) {
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        repeat(choices.dotCount) {
+            drawCircle(
+                color = if (choices.rainbowDots) randomColor() else randomGrey(),
+                center = randomOffset(size.width.toInt(), size.height.toInt()),
+                radius = Random.nextInt(10, 50).toFloat(),
+                style = Stroke(width = 10f),
             )
         }
     }

@@ -12,12 +12,18 @@ fun randomColor(): Color {
     return Color(r, g, b)
 }
 
-fun randomOffset(low:Int, high:Int): Offset =
-    Offset(Random.nextInt(low, high).toFloat(), Random.nextInt(low, high).toFloat())
+fun randomGrey(): Color {
+    val colorRange = 0..255
+    val c = colorRange.random()
+    return Color(c, c, c)
+}
+
+fun randomOffset(x: Int, y: Int): Offset =
+    Offset(Random.nextInt(0, x).toFloat(), Random.nextInt(0, y).toFloat())
 
 const val DOT_COUNT = 200
-val dots:List<Offset> = buildList {
+val dots: List<Offset> = buildList {
     repeat(DOT_COUNT) {
-        add(randomOffset(0,PAGE_SIZE))
+        add(randomOffset(PAGE_SIZE, PAGE_SIZE))
     }
 }

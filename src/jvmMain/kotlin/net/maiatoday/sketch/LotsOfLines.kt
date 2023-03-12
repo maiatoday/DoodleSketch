@@ -9,6 +9,9 @@ import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
+import androidx.compose.ui.graphics.drawscope.Stroke
+import net.maiatoday.components.Choices
+import kotlin.random.Random
 
 @Composable
 @Preview
@@ -39,7 +42,7 @@ const val PAGE_SIZE = 1000
 
 val lines:List<StartEnd> = buildList {
    repeat(LINE_COUNT) {
-       add(StartEnd(randomOffset(0,PAGE_SIZE), randomOffset(0,PAGE_SIZE)))
+       add(StartEnd(randomOffset(PAGE_SIZE,PAGE_SIZE), randomOffset(PAGE_SIZE,PAGE_SIZE)))
    }
 }
 
@@ -74,6 +77,23 @@ fun LotsOfRainbowLines() {
                 strokeWidth = 2f,
                 start = line.start,
                 end = line.end
+            )
+        }
+    }
+}
+
+@Composable
+fun AllTheLines(choices: Choices = Choices()) {
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        repeat(choices.dotCount) {
+            drawLine(
+                color = if (choices.rainbowLines) randomColor() else randomGrey(),
+                strokeWidth = 4f,
+                start = randomOffset(size.width.toInt(), size.height.toInt()),
+                end = randomOffset(size.width.toInt(), size.height.toInt())
             )
         }
     }
