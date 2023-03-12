@@ -174,6 +174,22 @@ fun HappyHearts() {
 
 @Composable
 @Preview
+fun SadHearts() {
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        repeat(DOT_COUNT) {
+            val d = randomOffset(size.width.toInt(), size.height.toInt())
+            translate(d.x, d.y) {
+                drawPath(heartPath, randomGrey(), style = Fill)
+            }
+        }
+    }
+}
+
+@Composable
+@Preview
 fun HeartPulse() {
     val infiniteTransition = rememberInfiniteTransition()
     val heartScale by infiniteTransition.animateFloat(

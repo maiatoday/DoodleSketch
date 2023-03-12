@@ -12,7 +12,7 @@ fun main() = application {
 //            FilledBlueSquare()
 //            LotsOfRainbowLines()
 //            LotsOfDoughnuts()
-            HappyHearts()
+            SadHearts()
             HeartPulse()
         }
     }
