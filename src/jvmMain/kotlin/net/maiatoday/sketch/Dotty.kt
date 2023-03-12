@@ -61,14 +61,6 @@ fun LimeOval() {
     }
 }
 
-
-const val DOT_COUNT = 200
-val dots:List<Offset> = buildList {
-    repeat(DOT_COUNT) {
-        add(randomOffset(0,PAGE_SIZE))
-    }
-}
-
 @Composable
 @Preview
 fun LotsOfDoughnuts() {
