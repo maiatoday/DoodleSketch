@@ -7,8 +7,10 @@ fun main() = application {
         Page {
 //            MagentaCircle()
 //            FilledBlueSquare()
-            LotsOfRainbowLines()
-            LotsOfDoughnuts()
+//            LotsOfRainbowLines()
+//            LotsOfDoughnuts()
+            HappyHearts()
+            HeartPulse()
         }
     }
 }

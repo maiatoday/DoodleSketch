@@ -1,9 +1,12 @@
 package net.maiatoday.sketch
 
+import androidx.compose.animation.animateColor
+import androidx.compose.animation.core.*
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
@@ -166,5 +169,44 @@ fun HappyHearts() {
             }
         }
     }
+}
 
+val heartStops = arrayOf(
+    0.0f to Color.Red,
+    0.5f to Color(255, 105, 180),
+    1f to Color.Magenta
+)
+
+@Composable
+@Preview
+fun HeartPulse() {
+    val infiniteTransition = rememberInfiniteTransition()
+    val heartScale by infiniteTransition.animateFloat(
+        initialValue = 0.5f,
+        targetValue = 1.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1000, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        )
+    )
+    val heartColor by infiniteTransition.animateColor(
+        initialValue = Color.Magenta,
+        targetValue = Color.Red,
+        animationSpec = infiniteRepeatable(
+            animation = tween(1000, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        )
+    )
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        withTransform({
+            scale(heartScale)
+            translate(center.x - heartSize.width/2, center.y- heartSize.height/2)
+
+        }) {
+            drawPath(heartPath, color = heartColor, style = Fill)
+        }
+    }
 }

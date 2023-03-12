@@ -1,0 +1,93 @@
+package net.maiatoday.sketch
+
+import androidx.compose.desktop.ui.tooling.preview.Preview
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.requiredSize
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clipToBounds
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.Fill
+import androidx.compose.ui.unit.dp
+
+val pinkShades = listOf(
+    Color(250, 0, 250),
+    Color(255, 0, 120),
+    Color(200, 3, 180),
+    Color(255, 100, 250),
+)
+
+val pinkToWhite = listOf(
+    Color(255, 105, 180),
+    Color(255, 255, 255),
+)
+
+val rgbRainbow = listOf(
+    Color.Red,
+    Color.Yellow,
+    Color.Green,
+    Color.Cyan,
+    Color.Blue,
+    Color.Magenta
+)
+
+//val brush = Brush.horizontalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
+val brush = Brush.verticalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
+//val brush = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
+
+@Composable
+@Preview
+fun BrushSwatch() {
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        val swatchSize = 250.dp.toPx()
+        drawRect(
+            brush = brush,
+            style = Fill,
+            topLeft = Offset(center.x - swatchSize/2, center.y - swatchSize/2),
+            size = Size(swatchSize, swatchSize)
+        )
+    }
+}
+
+@Preview
+@Composable
+fun BoxBrushSwatch() {
+    val colorStops = arrayOf(
+        0.0f to Color.Red,
+        0.5f to Color.White,
+        1f to Color.Magenta
+    )
+    Box(
+        modifier = Modifier
+            .requiredSize(200.dp)
+            .background(Brush.horizontalGradient(colorStops = colorStops))
+    )
+}
+
+@Composable
+@Preview
+fun ColorSwatch() {
+    val drawModifier = Modifier
+        .fillMaxSize()
+        .clipToBounds()
+    Canvas(modifier = drawModifier) {
+        val swatchSize = 250.dp.toPx()
+        drawRect(
+            color = Color.Magenta,
+            style = Fill,
+            topLeft = Offset(center.x - swatchSize/2, center.y - swatchSize/2),
+            size = Size(swatchSize,swatchSize)
+        )
+    }
+}
+
+
