@@ -1,6 +1,7 @@
 package net.maiatoday.tools
 
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import net.maiatoday.sketch.PAGE_SIZE
 import kotlin.random.Random
@@ -19,5 +20,9 @@ fun randomGrey(): Color {
     return Color(c, c, c)
 }
 
-fun randomOffset(x: Int, y: Int): Offset =
-    Offset(Random.nextInt(0, x).toFloat(), Random.nextInt(0, y).toFloat())
+const val DOT_COUNT = 200
+fun randomOffset(size: Size) =
+    Offset(
+        x = Random.nextInt(0, size.width.toInt()).toFloat(),
+        y = Random.nextInt(0, size.height.toInt()).toFloat()
+    )

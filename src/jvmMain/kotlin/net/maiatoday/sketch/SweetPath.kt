@@ -12,6 +12,7 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.*
 import net.maiatoday.components.drawModifier
+import net.maiatoday.tools.DOT_COUNT
 import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
@@ -206,7 +207,7 @@ fun HeartPulse() {
 fun HappyHearts() {
     Canvas(modifier = drawModifier) {
         repeat(DOT_COUNT) {
-            val d = randomOffset(size.width.toInt(), size.height.toInt())
+            val d = randomOffset(size)
             translate(d.x, d.y) {
                 drawPath(heartPath, randomColor(), style = Fill)
             }
@@ -219,7 +220,7 @@ fun HappyHearts() {
 fun SadHearts() {
     Canvas(modifier = drawModifier) {
         repeat(DOT_COUNT) {
-            val d = randomOffset(size.width.toInt(), size.height.toInt())
+            val d = randomOffset(size)
             translate(d.x, d.y) {
                 drawPath(heartPath, randomGrey(), style = Fill)
             }

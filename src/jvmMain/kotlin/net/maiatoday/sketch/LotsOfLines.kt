@@ -4,6 +4,7 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import net.maiatoday.components.Choices
@@ -41,7 +42,7 @@ const val PAGE_SIZE = 1000
 
 val lines:List<StartEnd> = buildList {
    repeat(LINE_COUNT) {
-       add(StartEnd(randomOffset(PAGE_SIZE,PAGE_SIZE), randomOffset(PAGE_SIZE,PAGE_SIZE)))
+       add(StartEnd(randomOffset(Size(PAGE_SIZE.toFloat(), PAGE_SIZE.toFloat())), randomOffset(Size(PAGE_SIZE.toFloat(), PAGE_SIZE.toFloat()))))
    }
 }
 
@@ -84,8 +85,8 @@ fun AllTheLines(choices: Choices = Choices()) {
             drawLine(
                 color = if (choices.rainbowLines) randomColor() else randomGrey(),
                 strokeWidth = 4f,
-                start = randomOffset(size.width.toInt(), size.height.toInt()),
-                end = randomOffset(size.width.toInt(), size.height.toInt())
+                start = randomOffset(size),
+                end = randomOffset(size)
             )
         }
     }
