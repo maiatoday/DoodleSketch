@@ -2,23 +2,22 @@ package net.maiatoday.sketch
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import net.maiatoday.components.Choices
+import net.maiatoday.components.drawModifier
+import net.maiatoday.tools.dots
+import net.maiatoday.tools.randomColor
+import net.maiatoday.tools.randomGrey
+import net.maiatoday.tools.randomOffset
 import kotlin.random.Random
 
 @Composable
 @Preview
 fun MagentaCircle() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawCircle(
             color = Color.Magenta,
@@ -32,9 +31,6 @@ fun MagentaCircle() {
 @Composable
 @Preview
 fun HotPinkOval() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawOval(
             color = Color(255, 105, 180),
@@ -48,9 +44,6 @@ fun HotPinkOval() {
 @Composable
 @Preview
 fun LimeOval() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawOval(
             color = Color(0, 255, 0),
@@ -64,9 +57,6 @@ fun LimeOval() {
 @Composable
 @Preview
 fun LotsOfDoughnuts() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         for (dot in dots) {
             drawCircle(
@@ -82,9 +72,6 @@ fun LotsOfDoughnuts() {
 @Composable
 @Preview
 fun LotsOfDots() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         for (dot in dots) {
             drawCircle(
@@ -99,9 +86,6 @@ fun LotsOfDots() {
 
 @Composable
 fun AllTheDots(choices: Choices = Choices()) {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         repeat(choices.dotCount) {
             drawCircle(

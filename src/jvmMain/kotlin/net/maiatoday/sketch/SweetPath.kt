@@ -14,15 +14,15 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.*
-import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.graphics.drawscope.translate
+import net.maiatoday.components.drawModifier
+import net.maiatoday.tools.DOT_COUNT
+import net.maiatoday.tools.randomColor
+import net.maiatoday.tools.randomGrey
+import net.maiatoday.tools.randomOffset
 
 @Composable
 @Preview
 fun TriangleWalk() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         val path = Path()
         path.moveTo(0f, 0f)
@@ -39,35 +39,32 @@ val heartPath = Path().apply {
     val w = heartSize.width
     val h = heartSize.height
     moveTo(0.5f * w, 0.25f * h)
-    cubicTo(0.5f * w, 0.225f * h, 0.458333333333333f * w, 0.125f * h, 0.291666666666667f * w, 0.125f * h)
-    cubicTo(0.0416666666666667f * w, 0.125f * h, 0.0416666666666667f * w, 0.4f * h, 0.0416666666666667f * w, 0.4f * h)
+    cubicTo(0.5f * w, 0.225f * h, 0.45833f * w, 0.125f * h, 0.291667f * w, 0.125f * h)
+    cubicTo(0.041667f * w, 0.125f * h, 0.041667f * w, 0.4f * h, 0.041667f * w, 0.4f * h)
     cubicTo(
-        0.0416666666666667f * w,
-        0.583333333333333f * h,
-        0.208333333333333f * w,
-        0.766666666666667f * h,
+        0.041667f * w,
+        0.58333f * h,
+        0.20833f * w,
+        0.76667f * h,
         0.5f * w,
-        0.916666666666667f * h
+        0.91667f * h
     )
     cubicTo(
-        0.791666666666667f * w,
-        0.766666666666667f * h,
-        0.958333333333333f * w,
-        0.583333333333333f * h,
-        0.958333333333333f * w,
+        0.791667f * w,
+        0.76667f * h,
+        0.95833f * w,
+        0.58333f * h,
+        0.95833f * w,
         0.4f * h
     )
-    cubicTo(0.958333333333333f * w, 0.4f * h, 0.958333333333333f * w, 0.125f * h, 0.708333333333333f * w, 0.125f * h)
-    cubicTo(0.583333333333333f * w, 0.125f * h, 0.5f * w, 0.225f * h, 0.5f * w, 0.25f * h)
+    cubicTo(0.9533f * w, 0.4f * h, 0.95833f * w, 0.125f * h, 0.70833f * w, 0.125f * h)
+    cubicTo(0.5833f * w, 0.125f * h, 0.5f * w, 0.225f * h, 0.5f * w, 0.25f * h)
     close()
 }
 
 @Composable
 @Preview
 fun HeartEdge() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawPath(heartPath, Color.Magenta, style = Stroke(width = 5f))
     }
@@ -76,9 +73,6 @@ fun HeartEdge() {
 @Composable
 @Preview
 fun HeartCenter() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         translate(center.x, center.y) {
             drawPath(heartPath, Color.Red, style = Fill)
@@ -89,9 +83,6 @@ fun HeartCenter() {
 @Composable
 @Preview
 fun HeartSpin() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         val pointBottomLeft = Offset(0f, size.height)
         val pointBottomRight = Offset(size.width, size.height)
@@ -133,9 +124,6 @@ fun HeartSpin() {
 @Composable
 @Preview
 fun HeartCenterSpin() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawCircle(
             color = Color.Magenta,
@@ -159,9 +147,6 @@ fun HeartCenterSpin() {
 @Composable
 @Preview
 fun HappyHearts() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         repeat(DOT_COUNT) {
             val d = randomOffset(size.width.toInt(), size.height.toInt())
@@ -175,9 +160,6 @@ fun HappyHearts() {
 @Composable
 @Preview
 fun SadHearts() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         repeat(DOT_COUNT) {
             val d = randomOffset(size.width.toInt(), size.height.toInt())
@@ -208,9 +190,6 @@ fun HeartPulse() {
             repeatMode = RepeatMode.Reverse
         )
     )
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         withTransform({
             scale(heartScale)
@@ -239,9 +218,6 @@ fun CandyHeart() {
             }
         }
     }
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawPath(heartPath, brush = customBrush, style = Fill)
     }

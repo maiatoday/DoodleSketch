@@ -2,23 +2,19 @@ package net.maiatoday.sketch
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
-import androidx.compose.ui.graphics.drawscope.Stroke
 import net.maiatoday.components.Choices
-import kotlin.random.Random
+import net.maiatoday.components.drawModifier
+import net.maiatoday.tools.randomColor
+import net.maiatoday.tools.randomGrey
+import net.maiatoday.tools.randomOffset
 
 @Composable
 @Preview
 fun OneLine() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         drawCircle(
             color = Color.Magenta,
@@ -49,9 +45,6 @@ val lines:List<StartEnd> = buildList {
 @Composable
 @Preview
 fun LotsOfLines() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         for (line in lines) {
             drawLine(
@@ -67,9 +60,6 @@ fun LotsOfLines() {
 @Composable
 @Preview
 fun LotsOfRainbowLines() {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         for (line in lines) {
             drawLine(
@@ -84,9 +74,6 @@ fun LotsOfRainbowLines() {
 
 @Composable
 fun AllTheLines(choices: Choices = Choices()) {
-    val drawModifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
     Canvas(modifier = drawModifier) {
         repeat(choices.dotCount) {
             drawLine(

@@ -1,7 +1,8 @@
-package net.maiatoday.sketch
+package net.maiatoday.tools
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import net.maiatoday.sketch.PAGE_SIZE
 import kotlin.random.Random
 
 fun randomColor(): Color {

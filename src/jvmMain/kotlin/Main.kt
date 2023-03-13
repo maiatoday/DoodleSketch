@@ -11,6 +11,7 @@ import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import net.maiatoday.components.Choices
 import net.maiatoday.components.DoodleChoicesPanel
+import net.maiatoday.components.Page
 import net.maiatoday.sketch.*
 
 fun main() = application {

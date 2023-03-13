@@ -1,4 +1,4 @@
-package net.maiatoday.sketch
+package net.maiatoday.components
 
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
@@ -24,3 +24,6 @@ fun Page(
         content()
     }
 }
+val drawModifier = Modifier
+    .fillMaxSize()
+    .clipToBounds()
