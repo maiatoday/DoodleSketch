@@ -90,7 +90,7 @@ fun LotsOfDots() {
 }
 //endregion
 
-//region Dots with choices
+//region Dots with choices - for later don't look
 @Composable
 fun AllTheDots(choices: Choices = Choices()) {
     Canvas(modifier = drawModifier) {

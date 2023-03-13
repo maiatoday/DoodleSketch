@@ -76,7 +76,7 @@ fun LotsOfRainbowLines() {
 }
 //endregion
 
-//region Lines with choices
+//region Lines with choices - For later don't look
 @Composable
 fun AllTheLines(choices: Choices = Choices()) {
     Canvas(modifier = drawModifier) {

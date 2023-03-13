@@ -14,6 +14,7 @@ fun main() = application {
 //            LotsOfRainbowLines()
 //            LotsOfDoughnuts()
             SadHearts()
+//            HappyHearts()
             HeartPulse()
         }
     }
