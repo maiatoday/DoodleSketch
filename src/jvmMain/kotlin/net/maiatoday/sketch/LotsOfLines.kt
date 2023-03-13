@@ -79,14 +79,14 @@ fun LotsOfRainbowLines() {
 
 //region Lines with choices - For later don't look
 @Composable
-fun AllTheLines(choices: Choices = Choices()) {
+fun AllTheLines(choices: Choices = Choices(), points:List<Offset>) {
     Canvas(modifier = drawModifier) {
         repeat(choices.dotCount) {
             drawLine(
                 color = if (choices.rainbowLines) randomColor() else randomGrey(),
                 strokeWidth = 4f,
-                start = randomOffset(size),
-                end = randomOffset(size)
+                start = points[it],
+                end = points[it+1]
             )
         }
     }

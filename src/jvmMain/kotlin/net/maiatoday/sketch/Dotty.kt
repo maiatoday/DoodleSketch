@@ -3,6 +3,7 @@ package net.maiatoday.sketch
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
@@ -92,12 +93,12 @@ fun LotsOfDots() {
 
 //region Dots with choices - for later don't look
 @Composable
-fun AllTheDots(choices: Choices = Choices()) {
+fun AllTheDots(choices: Choices = Choices(), points:List<Offset>) {
     Canvas(modifier = drawModifier) {
         repeat(choices.dotCount) {
             drawCircle(
                 color = if (choices.rainbowDots) randomColor() else randomGrey(),
-                center = randomOffset(size),
+                center = points[it],
                 radius = Random.nextInt(10, 50).toFloat(),
                 style = Fill,
             )

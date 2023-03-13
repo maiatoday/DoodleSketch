@@ -3,6 +3,7 @@ package net.maiatoday.tools
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.IntSize
 import net.maiatoday.sketch.PAGE_SIZE
 import kotlin.random.Random
 

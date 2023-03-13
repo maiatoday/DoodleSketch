@@ -4,15 +4,13 @@ import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Slider
-import androidx.compose.material.Switch
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -20,7 +18,7 @@ const val MIN_DOT_COUNT = 2
 const val MAX_DOT_COUNT = 200
 
 data class Choices(
-    val dotCount: Int = 5,
+    val dotCount: Int = 100,
     val background: Color = Color.White,
     val showDots: Boolean = true,
     val rainbowDots: Boolean = true,
@@ -29,13 +27,13 @@ data class Choices(
     val color1: Color = Color.White,
     val color2: Color = Color.Black,
     val color3: Color = Color.Red,
+    val size:IntSize = IntSize(600,600)
 )
 
 val padding = Modifier.padding(8.dp)
-val itemModifier = Modifier.fillMaxWidth().padding(8.dp)
 
 @Composable
-fun ChoicesPanel(modifier: Modifier, choices: Choices, onValueChange: (Choices) -> Unit) {
+fun ChoicesPanel(modifier: Modifier, choices: Choices, onNewPoints: () -> Unit = {}, onValueChange: (Choices) -> Unit) {
 
     LazyColumn(
         modifier = modifier
@@ -83,6 +81,11 @@ fun ChoicesPanel(modifier: Modifier, choices: Choices, onValueChange: (Choices) 
                 label = "Dot count"
             ) {
                 onValueChange(choices.copy(dotCount = it))
+            }
+        }
+        item {
+            Button(onClick = onNewPoints) {
+                Text("New points")
             }
         }
     }
