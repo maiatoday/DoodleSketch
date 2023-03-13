@@ -84,7 +84,7 @@ fun ChoicesPanel(modifier: Modifier, choices: Choices, onNewPoints: () -> Unit =
             }
         }
         item {
-            Button(onClick = onNewPoints) {
+            Button(modifier = padding, onClick = onNewPoints) {
                 Text("New points")
             }
         }

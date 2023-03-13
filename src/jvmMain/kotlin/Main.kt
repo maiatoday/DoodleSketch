@@ -31,12 +31,12 @@ fun main() = application {
         var points by remember { mutableStateOf(buildPoints(choices.size, MAX_DOT_COUNT)) }
 
         val settingsModifier = Modifier
-            .requiredWidth(600.dp)
+            .requiredWidth(200.dp)
             .fillMaxHeight()
             .clipToBounds()
 
         val pageModifier = Modifier
-            .requiredWidth(600.dp)
+            .requiredWidth(1000.dp)
             .fillMaxHeight()
             .clipToBounds()
         Row(modifier = Modifier.wrapContentSize()) {
