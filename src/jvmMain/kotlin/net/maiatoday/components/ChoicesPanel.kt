@@ -35,7 +35,7 @@ val padding = Modifier.padding(8.dp)
 val itemModifier = Modifier.fillMaxWidth().padding(8.dp)
 
 @Composable
-fun DoodleChoicesPanel(modifier: Modifier, choices: Choices, onValueChange: (Choices) -> Unit) {
+fun ChoicesPanel(modifier: Modifier, choices: Choices, onValueChange: (Choices) -> Unit) {
 
     LazyColumn(
         modifier = modifier
@@ -152,7 +152,7 @@ fun DoodleChoicesPanelPreview() {
     val modifier = Modifier
         .fillMaxSize()
         .clipToBounds()
-    DoodleChoicesPanel(modifier, Choices()) {}
+    ChoicesPanel(modifier, Choices()) {}
 }
 
 @Preview

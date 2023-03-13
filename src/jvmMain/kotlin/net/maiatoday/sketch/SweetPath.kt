@@ -4,18 +4,14 @@ import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.*
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clipToBounds
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.*
 import net.maiatoday.components.drawModifier
-import net.maiatoday.tools.DOT_COUNT
 import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
@@ -42,24 +38,14 @@ val heartPath = Path().apply {
     val w = heartSize.width
     val h = heartSize.height
     moveTo(0.5f * w, 0.25f * h)
-    cubicTo(0.5f * w, 0.225f * h, 0.45833f * w, 0.125f * h, 0.291667f * w, 0.125f * h)
+    cubicTo(
+        0.5f * w, 0.225f * h,
+        0.45833f * w, 0.125f * h,
+        0.291667f * w, 0.125f * h
+    )
     cubicTo(0.041667f * w, 0.125f * h, 0.041667f * w, 0.4f * h, 0.041667f * w, 0.4f * h)
-    cubicTo(
-        0.041667f * w,
-        0.58333f * h,
-        0.20833f * w,
-        0.76667f * h,
-        0.5f * w,
-        0.91667f * h
-    )
-    cubicTo(
-        0.791667f * w,
-        0.76667f * h,
-        0.95833f * w,
-        0.58333f * h,
-        0.95833f * w,
-        0.4f * h
-    )
+    cubicTo(0.041667f * w, 0.58333f * h, 0.20833f * w, 0.76667f * h, 0.5f * w, 0.91667f * h)
+    cubicTo(0.791667f * w, 0.76667f * h, 0.95833f * w, 0.58333f * h, 0.95833f * w, 0.4f * h)
     cubicTo(0.9533f * w, 0.4f * h, 0.95833f * w, 0.125f * h, 0.70833f * w, 0.125f * h)
     cubicTo(0.5833f * w, 0.125f * h, 0.5f * w, 0.225f * h, 0.5f * w, 0.25f * h)
     close()
@@ -69,7 +55,11 @@ val heartPath = Path().apply {
 @Preview
 fun HeartEdge() {
     Canvas(modifier = drawModifier) {
-        drawPath(heartPath, Color.Magenta, style = Stroke(width = 5f))
+        drawPath(
+            path = heartPath,
+            color = Color.Magenta,
+            style = Stroke(width = 5f)
+        )
     }
 }
 //endregion
@@ -93,7 +83,10 @@ fun CandyHeart() {
         }
     }
     Canvas(modifier = drawModifier) {
-        drawPath(heartPath, brush = customBrush, style = Fill)
+        drawPath(
+            path = heartPath,
+            brush = customBrush,
+            style = Fill)
     }
 }
 //endregion
@@ -198,7 +191,7 @@ fun HeartPulse() {
     Canvas(modifier = drawModifier) {
         withTransform({
             scale(heartScale)
-            translate(center.x - heartSize.width/2, center.y- heartSize.height/2)
+            translate(center.x - heartSize.width / 2, center.y - heartSize.height / 2)
 
         }) {
             drawPath(heartPath, color = heartColor, style = Fill)

@@ -10,7 +10,7 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
 import net.maiatoday.components.Choices
-import net.maiatoday.components.DoodleChoicesPanel
+import net.maiatoday.components.ChoicesPanel
 import net.maiatoday.components.Page
 import net.maiatoday.sketch.*
 
@@ -37,7 +37,7 @@ fun main() = application {
                 if (choices.showLines) AllTheLines(choices)
                 if (choices.showDots) AllTheDots(choices)
             }
-            DoodleChoicesPanel(settingsModifier, choices) { choices = it }
+            ChoicesPanel(settingsModifier, choices) { choices = it }
         }
     }
 }

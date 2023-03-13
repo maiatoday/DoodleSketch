@@ -21,10 +21,3 @@ fun randomGrey(): Color {
 
 fun randomOffset(x: Int, y: Int): Offset =
     Offset(Random.nextInt(0, x).toFloat(), Random.nextInt(0, y).toFloat())
-
-const val DOT_COUNT = 200
-val dots: List<Offset> = buildList {
-    repeat(DOT_COUNT) {
-        add(randomOffset(PAGE_SIZE, PAGE_SIZE))
-    }
-}

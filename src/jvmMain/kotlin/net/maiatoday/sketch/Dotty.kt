@@ -9,7 +9,6 @@ import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import net.maiatoday.components.Choices
 import net.maiatoday.components.drawModifier
-import net.maiatoday.tools.dots
 import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
@@ -59,14 +58,17 @@ fun LimeOval() {
 //endregion
 
 //region Lots of Doughnuts or Dots
+const val DOT_COUNT = 200
+fun randomOffset(size:Size) = randomOffset(size.width.toInt(), size.height.toInt())
+
 @Composable
 @Preview
 fun LotsOfDoughnuts() {
     Canvas(modifier = drawModifier) {
-        for (dot in dots) {
+        repeat(DOT_COUNT) {
             drawCircle(
                 color = randomColor(),
-                center = dot,
+                center = randomOffset(size),
                 radius = Random.nextInt(10, 50).toFloat(),
                 style = Stroke(width = 10f),
             )
@@ -78,10 +80,10 @@ fun LotsOfDoughnuts() {
 @Preview
 fun LotsOfDots() {
     Canvas(modifier = drawModifier) {
-        for (dot in dots) {
+        repeat(DOT_COUNT) {
             drawCircle(
                 color = randomColor(),
-                center = dot,
+                center = randomOffset(size),
                 radius = Random.nextInt(10, 50).toFloat(),
                 style = Fill,
             )
@@ -104,4 +106,5 @@ fun AllTheDots(choices: Choices = Choices()) {
         }
     }
 }
+
 //endregion
