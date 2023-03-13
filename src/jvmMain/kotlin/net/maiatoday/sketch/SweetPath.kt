@@ -20,6 +20,7 @@ import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
 
+//region Triangle walk
 @Composable
 @Preview
 fun TriangleWalk() {
@@ -32,7 +33,9 @@ fun TriangleWalk() {
         drawPath(path, Color.Magenta, style = Stroke(width = 10f))
     }
 }
+//endregion
 
+//region Heart path
 //// Thank You https://mahendranv.github.io/posts/compose-shapes-gists/
 val heartSize = Size(150f, 150f)
 val heartPath = Path().apply {
@@ -69,7 +72,33 @@ fun HeartEdge() {
         drawPath(heartPath, Color.Magenta, style = Stroke(width = 5f))
     }
 }
+//endregion
 
+//region Candy Heart
+val candyColours = listOf(Color.Red, Color.Magenta, Color(255, 105, 180))
+
+@Composable
+@Preview
+fun CandyHeart() {
+    val customBrush = remember {
+        object : ShaderBrush() {
+            override fun createShader(size: Size): Shader {
+                return LinearGradientShader(
+                    colors = candyColours,
+                    from = Offset.Zero,
+                    to = Offset(heartSize.width / 4f, 0f),
+                    tileMode = TileMode.Mirror
+                )
+            }
+        }
+    }
+    Canvas(modifier = drawModifier) {
+        drawPath(heartPath, brush = customBrush, style = Fill)
+    }
+}
+//endregion
+
+//region Transforming hearts
 @Composable
 @Preview
 fun HeartCenter() {
@@ -143,33 +172,9 @@ fun HeartCenterSpin() {
         }
     }
 }
+//endregion
 
-@Composable
-@Preview
-fun HappyHearts() {
-    Canvas(modifier = drawModifier) {
-        repeat(DOT_COUNT) {
-            val d = randomOffset(size.width.toInt(), size.height.toInt())
-            translate(d.x, d.y) {
-                drawPath(heartPath, randomColor(), style = Fill)
-            }
-        }
-    }
-}
-
-@Composable
-@Preview
-fun SadHearts() {
-    Canvas(modifier = drawModifier) {
-        repeat(DOT_COUNT) {
-            val d = randomOffset(size.width.toInt(), size.height.toInt())
-            translate(d.x, d.y) {
-                drawPath(heartPath, randomGrey(), style = Fill)
-            }
-        }
-    }
-}
-
+//region Heart pulse
 @Composable
 @Preview
 fun HeartPulse() {
@@ -200,25 +205,32 @@ fun HeartPulse() {
         }
     }
 }
+//endregion
 
-val candyColours = listOf(Color.Red, Color.Magenta, Color(255, 105, 180))
-
+//region Messy - don't look
 @Composable
 @Preview
-fun CandyHeart() {
-    val customBrush = remember {
-        object : ShaderBrush() {
-            override fun createShader(size: Size): Shader {
-                return LinearGradientShader(
-                    colors = candyColours,
-                    from = Offset.Zero,
-                    to = Offset(heartSize.width / 4f, 0f),
-                    tileMode = TileMode.Mirror
-                )
+fun HappyHearts() {
+    Canvas(modifier = drawModifier) {
+        repeat(DOT_COUNT) {
+            val d = randomOffset(size.width.toInt(), size.height.toInt())
+            translate(d.x, d.y) {
+                drawPath(heartPath, randomColor(), style = Fill)
             }
         }
     }
+}
+
+@Composable
+@Preview
+fun SadHearts() {
     Canvas(modifier = drawModifier) {
-        drawPath(heartPath, brush = customBrush, style = Fill)
+        repeat(DOT_COUNT) {
+            val d = randomOffset(size.width.toInt(), size.height.toInt())
+            translate(d.x, d.y) {
+                drawPath(heartPath, randomGrey(), style = Fill)
+            }
+        }
     }
 }
+//endregion

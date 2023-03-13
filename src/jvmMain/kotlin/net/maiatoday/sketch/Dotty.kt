@@ -15,6 +15,7 @@ import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
 import kotlin.random.Random
 
+//region Magenta Circle
 @Composable
 @Preview
 fun MagentaCircle() {
@@ -27,7 +28,9 @@ fun MagentaCircle() {
         )
     }
 }
+//endregion
 
+//region Hot Pink and Lime oval
 @Composable
 @Preview
 fun HotPinkOval() {
@@ -53,7 +56,9 @@ fun LimeOval() {
         )
     }
 }
+//endregion
 
+//region Lots of Doughnuts or Dots
 @Composable
 @Preview
 fun LotsOfDoughnuts() {
@@ -83,7 +88,9 @@ fun LotsOfDots() {
         }
     }
 }
+//endregion
 
+//region Dots with choices
 @Composable
 fun AllTheDots(choices: Choices = Choices()) {
     Canvas(modifier = drawModifier) {
@@ -97,3 +104,4 @@ fun AllTheDots(choices: Choices = Choices()) {
         }
     }
 }
+//endregion

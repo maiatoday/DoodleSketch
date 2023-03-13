@@ -12,6 +12,7 @@ import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
 
+//region One Line and coordinate system
 @Composable
 @Preview
 fun OneLine() {
@@ -31,7 +32,9 @@ fun OneLine() {
 
     }
 }
+//endregion
 
+//region Lots of Lines with rainbows
 data class StartEnd(val start:Offset, val end:Offset)
 const val LINE_COUNT = 100
 const val PAGE_SIZE = 1000
@@ -71,7 +74,9 @@ fun LotsOfRainbowLines() {
         }
     }
 }
+//endregion
 
+//region Lines with choices
 @Composable
 fun AllTheLines(choices: Choices = Choices()) {
     Canvas(modifier = drawModifier) {
@@ -85,3 +90,4 @@ fun AllTheLines(choices: Choices = Choices()) {
         }
     }
 }
+//endregion

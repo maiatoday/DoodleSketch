@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import net.maiatoday.components.drawModifier
 
+//region Blue Square
 @Composable
 @Preview
 fun BlueSquare() {
@@ -23,7 +24,9 @@ fun BlueSquare() {
         )
     }
 }
+//endregion
 
+//region Filled Blue Square
 @Composable
 @Preview
 fun FilledBlueSquare() {
@@ -36,8 +39,9 @@ fun FilledBlueSquare() {
         )
     }
 }
+//endregion
 
-
+//region Center Blue Square
 @Composable
 @Preview
 fun CenterBlueSquare() {
@@ -51,8 +55,9 @@ fun CenterBlueSquare() {
         )
     }
 }
+//endregion
 
-
+//region Rounded Grey Square
 @Composable
 @Preview
 fun RoundedGreySquare() {
@@ -67,3 +72,4 @@ fun RoundedGreySquare() {
         )
     }
 }
+//endregion
