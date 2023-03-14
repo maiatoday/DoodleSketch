@@ -4,7 +4,7 @@ Experiments in doodling in compose
 
 ## BeSquare
 
-Eploring rectangles and the coordinate system. The coordinate looks like this:
+Exploring rectangles and the coordinate system. The coordinate looks like this:
 <image goes here>
 
 ## Dotty
@@ -29,7 +29,7 @@ Join the dots. Bezier curves. Translations and rotations. Here is a site that sh
 
 ## Sample - mobile and desktop
 
-Whats the difference between mobile and desktop.Images go here
+What's the difference between mobile and desktop.
 
 Desktop has:
 
@@ -37,11 +37,11 @@ Desktop has:
 - Toolbar
 - Notifications
 - Mouse clicks/drags/moves
-- Lifecyle is simple
+- Lifecycle is simple
 
 Mobile has:
 
-- Complex lifecyle
+- Complex lifecycle
 - Back button
 - Touch gestures
 - Android system interactions
