@@ -12,7 +12,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
+import net.maiatoday.components.blue1
+import net.maiatoday.components.blue2
 import net.maiatoday.components.drawModifier
+import net.maiatoday.components.minty
 
 //region Blue Square
 @Composable
@@ -78,9 +81,6 @@ fun RoundedGreySquare() {
 //endregion
 
 //region Blue experiments - don't look
-val blue1 = Color(127, 144, 244)
-val blue2 = Color(91, 193, 238)
-val minty = Color(28, 233, 182)
 const val blockSplitCount = 9
 const val blockMax = blockSplitCount * blockSplitCount
 const val midBlock = blockMax / 2

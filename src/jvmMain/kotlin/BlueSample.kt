@@ -2,7 +2,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import androidx.compose.ui.window.rememberWindowState
-import net.maiatoday.components.Page
 import net.maiatoday.sketch.*
 
 fun main() = application {

@@ -16,6 +16,9 @@ import androidx.compose.ui.unit.sp
 
 const val MIN_DOT_COUNT = 2
 const val MAX_DOT_COUNT = 200
+val blue1 = Color(127, 144, 244)
+val blue2 = Color(91, 193, 238)
+val minty = Color(28, 233, 182)
 
 data class Choices(
     val dotCount: Int = 100,
