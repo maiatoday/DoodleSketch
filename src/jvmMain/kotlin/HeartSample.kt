@@ -13,8 +13,8 @@ fun main() = application {
 //            FilledBlueSquare()
 //            LotsOfRainbowLines()
 //            LotsOfDoughnuts()
-            SadHearts()
-//            HappyHearts()
+//            SadHearts()
+            HappyHearts()
             HeartPulse()
         }
     }

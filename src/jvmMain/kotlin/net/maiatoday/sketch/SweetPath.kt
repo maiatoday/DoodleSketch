@@ -107,34 +107,6 @@ fun HeartCenter() {
 @Preview
 fun HeartSpin() {
     Canvas(modifier = drawModifier) {
-        val pointBottomLeft = Offset(0f, size.height)
-        val pointBottomRight = Offset(size.width, size.height)
-        val pointTopLeft = Offset.Zero
-        val pointTopRight = Offset(size.width, 0f)
-        drawCircle(
-            color = Color.Magenta,
-            center = pointTopLeft,
-            radius = 5f,
-            style = Fill
-        )
-        drawCircle(
-            color = Color.Magenta,
-            center = center,
-            radius = 5f,
-            style = Fill
-        )
-        drawCircle(
-            color = Color.Black,
-            center = pointBottomLeft,
-            radius = 5f,
-            style = Fill
-        )
-        drawCircle(
-            color = Color.Blue,
-            center = pointTopRight,
-            radius = 5f,
-            style = Fill
-        )
         rotate(
             degrees = 10F,
             pivot = Offset.Zero

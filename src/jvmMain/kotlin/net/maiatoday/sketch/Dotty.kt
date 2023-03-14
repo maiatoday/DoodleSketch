@@ -39,7 +39,7 @@ fun HotPinkOval() {
         drawOval(
             color = Color(255, 105, 180),
             topLeft = center,
-            size = Size(100f, 50f),
+            size = Size(200f, 150f),
             style = Fill,
         )
     }
@@ -52,7 +52,7 @@ fun LimeOval() {
         drawOval(
             color = Color(0, 255, 0),
             topLeft = center,
-            size = Size(50f, 150f),
+            size = Size(150f, 250f),
             style = Fill,
         )
     }

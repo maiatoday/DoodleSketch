@@ -19,6 +19,7 @@ import net.maiatoday.components.drawModifier
 val brush = Brush.verticalGradient(listOf(Color.Magenta, Color.White))
 //val brush = Brush.horizontalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
 //val brush = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.LightGray))
+//val brush = Brush.radialGradient(listOf(minty, blue1, blue2, Color.White))
 
 @Composable
 @Preview
@@ -64,19 +65,19 @@ fun ColorSwatch() {
     }
 }
 
-val pinkToWhite = listOf(
-    Color(255, 105, 180),
-    Color(255, 255, 255),
-)
+//val pinkToWhite = listOf(
+//    Color(255, 105, 180),
+//    Color(255, 255, 255),
+//)
 
-val rgbRainbow = listOf(
-    Color.Red,
-    Color.Yellow,
-    Color.Green,
-    Color.Cyan,
-    Color.Blue,
-    Color.Magenta
-)
+//val rgbRainbow = listOf(
+//    Color.Red,
+//    Color.Yellow,
+//    Color.Green,
+//    Color.Cyan,
+//    Color.Blue,
+//    Color.Magenta
+//)
 //endregion
 
 
