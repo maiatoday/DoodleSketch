@@ -3,9 +3,13 @@ package net.maiatoday.tools
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
+import net.maiatoday.ui.Charcoal
+import net.maiatoday.ui.Dove
 import net.maiatoday.ui.sketchColors
 import kotlin.random.Random
 fun randomThemeColor(): Color = sketchColors.random()
+
+fun randomThemeGrey(): Color = listOf(Color.White, Dove, Charcoal, Color.Black).random()
 
 
 fun randomColor(): Color {
