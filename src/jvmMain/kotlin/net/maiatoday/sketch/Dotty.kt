@@ -10,10 +10,7 @@ import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
 import net.maiatoday.components.Choices
 import net.maiatoday.components.drawModifier
-import net.maiatoday.tools.DOT_COUNT
-import net.maiatoday.tools.randomColor
-import net.maiatoday.tools.randomGrey
-import net.maiatoday.tools.randomOffset
+import net.maiatoday.tools.*
 import kotlin.random.Random
 
 //region Magenta Circle
@@ -97,7 +94,7 @@ fun AllTheDots(choices: Choices = Choices(), points:List<Offset>) {
     Canvas(modifier = drawModifier) {
         repeat(choices.dotCount) {
             drawCircle(
-                color = if (choices.rainbowDots) randomColor() else randomGrey(),
+                color = if (choices.rainbowDots) randomThemeColor()  else randomGrey(),
                 center = points[it],
                 radius = Random.nextInt(10, 50).toFloat(),
                 style = Fill,

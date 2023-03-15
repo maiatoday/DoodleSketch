@@ -16,7 +16,7 @@ val Persimmon = Color(255, 115, 112)
 val Peach = Color(255, 208, 174)
 val Bluebell = Color(127, 144, 244)
 
-val colors = listOf(
+val sketchColors = listOf(
     Sky,
     Spearmint,
     Minty,
@@ -32,7 +32,7 @@ val colors = listOf(
 @Composable
 fun previewColours() {
     Column {
-        for (c in colors) {
+        for (c in sketchColors) {
             Swatch(color = c)
         }
     }

@@ -12,6 +12,7 @@ import net.maiatoday.components.drawModifier
 import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
+import net.maiatoday.tools.randomThemeColor
 
 //region One Line and coordinate system
 @Composable
@@ -83,7 +84,7 @@ fun AllTheLines(choices: Choices = Choices(), points:List<Offset>) {
     Canvas(modifier = drawModifier) {
         repeat(choices.dotCount) {
             drawLine(
-                color = if (choices.rainbowLines) randomColor() else randomGrey(),
+                color = if (choices.rainbowLines) randomThemeColor() else randomGrey(),
                 strokeWidth = 4f,
                 start = points[it],
                 end = points[it+1]

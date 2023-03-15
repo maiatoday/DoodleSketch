@@ -11,12 +11,10 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
-import net.maiatoday.ui.Bluebell
-import net.maiatoday.ui.Sky
 import net.maiatoday.components.drawModifier
 import net.maiatoday.components.roundedSwatch
 import net.maiatoday.components.swatch
-import net.maiatoday.ui.Minty
+import net.maiatoday.ui.*
 
 //region Blue Square
 @Composable
@@ -55,7 +53,7 @@ fun CenterBlueSquare() {
     val squareSize = 100f
     Canvas(modifier = drawModifier) {
         drawRect(
-            color = Bluebell,
+            color = Turquoise,
             style = Fill,
             size = Size(squareSize, squareSize),
             topLeft = Offset(center.x - squareSize / 2, center.y - squareSize / 2)
@@ -71,7 +69,7 @@ fun RoundedGreySquare() {
     val squareSize = 100f
     Canvas(modifier = drawModifier) {
         drawRoundRect(
-            color = Color.DarkGray,
+            color = Charcoal,
             style = Fill,
             size = Size(squareSize, squareSize),
             topLeft = Offset(size.width - squareSize - 10f, size.height - squareSize - 10f),
