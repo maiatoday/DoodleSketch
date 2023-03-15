@@ -9,13 +9,14 @@ import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
-import net.maiatoday.components.blue1
-import net.maiatoday.components.blue2
+import net.maiatoday.ui.Bluebell
+import net.maiatoday.ui.Sky
 import net.maiatoday.components.drawModifier
-import net.maiatoday.components.minty
+import net.maiatoday.components.roundedSwatch
+import net.maiatoday.components.swatch
+import net.maiatoday.ui.Minty
 
 //region Blue Square
 @Composable
@@ -24,7 +25,7 @@ fun BlueSquare() {
     val squareSize = 100f
     Canvas(modifier = drawModifier) {
         drawRect(
-            color = Color.Blue,
+            color = Bluebell,
             style = Stroke(width = 10f),
             size = Size(squareSize, squareSize)
         )
@@ -39,7 +40,7 @@ fun FilledBlueSquare() {
     val squareSize = 100f
     Canvas(modifier = drawModifier) {
         drawRect(
-            color = Color.Blue,
+            color = Sky,
             style = Fill,
             size = Size(squareSize, squareSize)
         )
@@ -54,7 +55,7 @@ fun CenterBlueSquare() {
     val squareSize = 100f
     Canvas(modifier = drawModifier) {
         drawRect(
-            color = Color.Blue,
+            color = Bluebell,
             style = Fill,
             size = Size(squareSize, squareSize),
             topLeft = Offset(center.x - squareSize / 2, center.y - squareSize / 2)
@@ -103,9 +104,9 @@ fun BlueBlocks() {
         var offset = Offset.Zero
         repeat(blockCount.toInt()) { count ->
             when {
-                count == midBlock -> roundedSwatch(offset = offset, color = minty)
-                count % 2 == 0 -> swatch(fill = true, offset = offset, color = blue1)
-                else -> swatch(offset = offset, color = blue2)
+                count == midBlock -> roundedSwatch(offset = offset, color = Minty)
+                count % 2 == 0 -> swatch(fill = true, offset = offset, color = Bluebell)
+                else -> swatch(offset = offset, color = Sky)
             }
             val (x, y) = if (count % blockSplitCount == blockSplitCount - 1) {
                 (0f to offset.y + paddingVal + squareSize)
@@ -115,25 +116,5 @@ fun BlueBlocks() {
             offset = Offset(x, y)
         }
     }
-
-}
-
-fun DrawScope.swatch(color: Color = Color.Blue, fill: Boolean = false, size: Float = 100f, offset: Offset) {
-    drawRect(
-        color = color,
-        style = if (fill) Fill else Stroke(width = 10f),
-        size = Size(size, size),
-        topLeft = offset
-    )
-}
-
-fun DrawScope.roundedSwatch(color: Color = Color.LightGray, fill: Boolean = true, size: Float = 100f, offset: Offset) {
-    drawRoundRect(
-        color = color,
-        style = if (fill) Fill else Stroke(width = 10f),
-        size = Size(size, size),
-        topLeft = offset,
-        cornerRadius = CornerRadius(10f, 10f)
-    )
 }
 //endregion

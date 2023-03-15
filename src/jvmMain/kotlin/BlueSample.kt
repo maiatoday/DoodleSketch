@@ -7,7 +7,7 @@ import net.maiatoday.sketch.*
 fun main() = application {
     Window(
         title = "Doodle Sketch Blue Blocks",
-        state = rememberWindowState(width = 550.dp, height = 550.dp),
+        state = rememberWindowState(width = 990.dp, height = 990.dp),
         resizable = false,
         onCloseRequest = ::exitApplication
     ) {

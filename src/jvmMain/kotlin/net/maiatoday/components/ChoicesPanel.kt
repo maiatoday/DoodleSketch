@@ -13,12 +13,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import net.maiatoday.ui.DoodleSketchTheme
 
 const val MIN_DOT_COUNT = 2
 const val MAX_DOT_COUNT = 200
-val blue1 = Color(127, 144, 244)
-val blue2 = Color(91, 193, 238)
-val minty = Color(28, 233, 182)
 
 data class Choices(
     val dotCount: Int = 100,
@@ -155,10 +153,12 @@ fun ColorPicker(modifier: Modifier = Modifier, initialValue: Color, onChange: (C
 @Preview
 @Composable
 fun DoodleChoicesPanelPreview() {
-    val modifier = Modifier
-        .fillMaxSize()
-        .clipToBounds()
-    ChoicesPanel(modifier, Choices()) {}
+    DoodleSketchTheme {
+        val modifier = Modifier
+            .fillMaxSize()
+            .clipToBounds()
+        ChoicesPanel(modifier, Choices()) {}
+    }
 }
 
 @Preview
