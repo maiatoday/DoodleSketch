@@ -35,6 +35,6 @@ fun DrawScope.roundedSwatch(color: Color = Color.LightGray, fill: Boolean = true
 
 @Composable
 fun Swatch(color: Color = Color.LightGray, size: Dp = 48.dp) {
-    Box(modifier = Modifier.background(color).size(size).padding(8.dp))
+    Box(modifier = Modifier.padding(8.dp).background(color).size(size))
 }
 
