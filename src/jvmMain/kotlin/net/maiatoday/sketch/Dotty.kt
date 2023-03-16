@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import net.maiatoday.components.Choices
 import net.maiatoday.components.drawModifier
 import net.maiatoday.tools.*
+import net.maiatoday.ui.Persimmon
 import kotlin.random.Random
 
 //region Magenta Circle
@@ -19,7 +20,7 @@ import kotlin.random.Random
 fun MagentaCircle() {
     Canvas(modifier = drawModifier) {
         drawCircle(
-            color = Color.Magenta,
+            color = Persimmon,
             center = center,
             radius = 100f,
             style = Stroke(width = 10f),

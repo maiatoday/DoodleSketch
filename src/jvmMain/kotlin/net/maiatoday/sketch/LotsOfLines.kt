@@ -29,7 +29,7 @@ fun OneLine() {
             color = Color.Black,
             strokeWidth = 2f,
             start = center,
-            end = Offset(center.x+100, center.y+100)
+            end = Offset(center.x+100, center.y-100)
         )
 
     }

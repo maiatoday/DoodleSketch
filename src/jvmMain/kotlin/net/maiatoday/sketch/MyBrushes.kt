@@ -14,12 +14,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.unit.dp
 import net.maiatoday.components.drawModifier
+import net.maiatoday.ui.Bluebell
+import net.maiatoday.ui.Minty
+import net.maiatoday.ui.Persimmon
+import net.maiatoday.ui.Sky
 
 //region Gradient Brush
-val brush = Brush.verticalGradient(listOf(Color.Magenta, Color.White))
+val brush = Brush.verticalGradient(listOf(Persimmon, Color.White))
 //val brush = Brush.horizontalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
 //val brush = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.LightGray))
-//val brush = Brush.radialGradient(listOf(minty, blue1, blue2, Color.White))
+//val brush = Brush.radialGradient(listOf(Minty, Sky, Bluebell, Color.White))
 
 @Composable
 @Preview
@@ -39,7 +43,7 @@ fun BrushSwatch() {
 fun BoxBrushSwatch() {
     val colorStops = arrayOf(
         0.0f to Color.Red,
-        0.5f to Color.White,
+        0.2f to Color.White,
         1f to Color.Magenta
     )
     Box(

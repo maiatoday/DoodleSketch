@@ -8,23 +8,24 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.rotate
 import net.maiatoday.components.drawModifier
 import net.maiatoday.components.roundedSwatch
 import net.maiatoday.components.swatch
+import net.maiatoday.tools.randomRotations
 import net.maiatoday.ui.*
 
 //region Blue Square
 @Composable
 @Preview
 fun BlueSquare() {
-    val squareSize = 100f
+    val squareSize = 150f
     Canvas(modifier = drawModifier) {
         drawRect(
             color = Bluebell,
-            style = Stroke(width = 10f),
+            style = Stroke(width = 20f),
             size = Size(squareSize, squareSize)
         )
     }
@@ -35,11 +36,12 @@ fun BlueSquare() {
 @Composable
 @Preview
 fun FilledBlueSquare() {
-    val squareSize = 100f
+    val squareSize = 150f
     Canvas(modifier = drawModifier) {
         drawRect(
             color = Sky,
             style = Fill,
+           // topLeft = Offset(50f,50f),
             size = Size(squareSize, squareSize)
         )
     }
@@ -50,7 +52,7 @@ fun FilledBlueSquare() {
 @Composable
 @Preview
 fun CenterBlueSquare() {
-    val squareSize = 100f
+    val squareSize = 150f
     Canvas(modifier = drawModifier) {
         drawRect(
             color = Turquoise,
@@ -58,6 +60,11 @@ fun CenterBlueSquare() {
             size = Size(squareSize, squareSize),
             topLeft = Offset(center.x - squareSize / 2, center.y - squareSize / 2)
         )
+        //drawCircle(
+        //    color = Persimmon,
+        //    radius = 5f,
+        //    center = center
+        //)
     }
 }
 //endregion
@@ -66,7 +73,7 @@ fun CenterBlueSquare() {
 @Composable
 @Preview
 fun RoundedGreySquare() {
-    val squareSize = 100f
+    val squareSize = 150f
     Canvas(modifier = drawModifier) {
         drawRoundRect(
             color = Charcoal,
@@ -83,10 +90,10 @@ fun RoundedGreySquare() {
 const val blockSplitCount = 9
 const val blockMax = blockSplitCount * blockSplitCount
 const val midBlock = blockMax / 2
+val rotations = randomRotations(blockMax)
 
 @Composable
-@Preview
-fun BlueBlocks() {
+fun DoodlingBlueBlocks() {
     val infiniteTransition = rememberInfiniteTransition()
     val blockCount: Float by infiniteTransition.animateFloat(
         initialValue = 0f,
@@ -98,21 +105,34 @@ fun BlueBlocks() {
     )
     val paddingVal = 10
     val squareSize = 100f
+    BlueBlocks(blockCount, paddingVal, squareSize)
+}
+
+@Composable
+fun BlueBlocks(blockCount: Float, paddingVal: Int = 10, squareSize: Float = 100f) {
     Canvas(modifier = drawModifier) {
         var offset = Offset.Zero
         repeat(blockCount.toInt()) { count ->
-            when {
-                count == midBlock -> roundedSwatch(offset = offset, color = Minty)
-                count % 2 == 0 -> swatch(fill = true, offset = offset, color = Bluebell)
-                else -> swatch(offset = offset, color = Sky)
-            }
-            val (x, y) = if (count % blockSplitCount == blockSplitCount - 1) {
-                (0f to offset.y + paddingVal + squareSize)
-            } else {
-                (offset.x + paddingVal + squareSize to offset.y)
-            }
-            offset = Offset(x, y)
+//            rotate(degrees = rotations[count], pivot = offset) {
+                when {
+                    count == midBlock -> roundedSwatch(offset = offset, color = Minty)
+                    count % 2 == 0 -> swatch(fill = true, offset = offset, color = Bluebell)
+                    else -> swatch(offset = offset, color = Sky)
+                }
+                val (x, y) = if (count % blockSplitCount == blockSplitCount - 1) {
+                    (0f to offset.y + paddingVal + squareSize)
+                } else {
+                    (offset.x + paddingVal + squareSize to offset.y)
+                }
+                offset = Offset(x, y)
+//            } // end rotate
         }
     }
+}
+
+@Composable
+@Preview
+fun BlueBlocksPreview() {
+    BlueBlocks(blockMax.toFloat())
 }
 //endregion

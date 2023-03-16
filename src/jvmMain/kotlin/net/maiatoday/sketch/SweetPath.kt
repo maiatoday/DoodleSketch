@@ -167,7 +167,9 @@ fun HeartPulse() {
             translate(center.x - heartSize.width / 2, center.y - heartSize.height / 2)
 
         }) {
-            drawPath(heartPath, color = heartColor, style = Fill)
+            drawPath(heartPath,
+                color = heartColor,
+                style = Fill)
         }
     }
 }

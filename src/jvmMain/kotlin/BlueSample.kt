@@ -11,6 +11,6 @@ fun main() = application {
         resizable = false,
         onCloseRequest = ::exitApplication
     ) {
-        BlueBlocks()
+        DoodlingBlueBlocks()
     }
 }

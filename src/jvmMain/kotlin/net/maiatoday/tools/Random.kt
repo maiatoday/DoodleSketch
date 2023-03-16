@@ -7,6 +7,7 @@ import net.maiatoday.ui.Charcoal
 import net.maiatoday.ui.Dove
 import net.maiatoday.ui.sketchColors
 import kotlin.random.Random
+
 fun randomThemeColor(): Color = sketchColors.random()
 
 fun randomThemeGrey(): Color = listOf(Color.White, Dove, Charcoal, Color.Black).random()
@@ -32,3 +33,9 @@ fun randomOffset(size: Size) =
         x = Random.nextInt(0, size.width.toInt()).toFloat(),
         y = Random.nextInt(0, size.height.toInt()).toFloat()
     )
+
+fun randomRotations(max: Int, multiplier: Float = 5f) = buildList<Float> {
+    repeat(max) {
+        add(Random.nextFloat() * multiplier - multiplier)
+    }
+}
