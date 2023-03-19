@@ -1,6 +1,6 @@
 # Jetpack Compose Doodles
 
-Experiments in doodling in compose. The drawing part works equally well in Android and in desktop compose.
+Experiments in doodling in compose. The drawing part works equally well in Android and in desktop compose. To see the previews you need the [Compose Multiplatform plugin](https://plugins.jetbrains.com/plugin/16541-compose-multiplatform-ide-support)
 When was the last time you just experimented with pens and paper just drawing for fun and not for any specific reason.
 
 ![Blue Squares](images/BeSquare.jpg)
