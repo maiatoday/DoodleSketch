@@ -3,6 +3,7 @@ package net.maiatoday.sketch
 import androidx.compose.animation.core.*
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.geometry.CornerRadius
@@ -10,7 +11,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
-import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.unit.dp
 import net.maiatoday.components.drawModifier
 import net.maiatoday.components.roundedSwatch
 import net.maiatoday.components.swatch
@@ -22,7 +23,7 @@ import net.maiatoday.ui.*
 @Preview
 fun BlueSquare() {
     val squareSize = 150f
-    Canvas(modifier = drawModifier) {
+    Canvas(modifier = drawModifier.padding(8.dp)) {
         drawRect(
             color = Bluebell,
             style = Stroke(width = 20f),
@@ -37,7 +38,7 @@ fun BlueSquare() {
 @Preview
 fun FilledBlueSquare() {
     val squareSize = 150f
-    Canvas(modifier = drawModifier) {
+    Canvas(modifier = drawModifier.padding(8.dp)) {
         drawRect(
             color = Sky,
             style = Fill,
@@ -52,7 +53,9 @@ fun FilledBlueSquare() {
 @Composable
 @Preview
 fun CenterBlueSquare() {
-    val squareSize = 150f
+    val squareSize = 300f
+    val sd = 100.dp
+
     Canvas(modifier = drawModifier) {
         drawRect(
             color = Turquoise,
@@ -60,11 +63,11 @@ fun CenterBlueSquare() {
             size = Size(squareSize, squareSize),
             topLeft = Offset(center.x - squareSize / 2, center.y - squareSize / 2)
         )
-        //drawCircle(
-        //    color = Persimmon,
-        //    radius = 5f,
-        //    center = center
-        //)
+        drawCircle(
+            color = Persimmon,
+            radius = 5f,
+            center = center
+        )
     }
 }
 //endregion
@@ -74,12 +77,12 @@ fun CenterBlueSquare() {
 @Preview
 fun RoundedGreySquare() {
     val squareSize = 150f
-    Canvas(modifier = drawModifier) {
+    Canvas(modifier = drawModifier.padding(8.dp)) {
         drawRoundRect(
             color = Charcoal,
             style = Fill,
             size = Size(squareSize, squareSize),
-            topLeft = Offset(size.width - squareSize - 10f, size.height - squareSize - 10f),
+            topLeft = Offset(size.width - squareSize, size.height - squareSize),
             cornerRadius = CornerRadius(10f, 10f)
         )
     }
