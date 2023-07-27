@@ -23,7 +23,7 @@ fun MagentaCircle() {
             color = Persimmon,
             center = center,
             radius = 100f,
-            style = Stroke(width = 10f),
+            style = Stroke(width = 20f),
         )
     }
 }
@@ -37,7 +37,7 @@ fun HotPinkOval() {
         drawOval(
             color = Color(255, 105, 180),
             topLeft = center,
-            size = Size(200f, 150f),
+            size = Size(50f, 150f),
             style = Fill,
         )
     }

@@ -42,7 +42,7 @@ fun FilledBlueSquare() {
         drawRect(
             color = Sky,
             style = Fill,
-           // topLeft = Offset(50f,50f),
+            topLeft = Offset(50f,150f),
             size = Size(squareSize, squareSize)
         )
     }
@@ -83,7 +83,7 @@ fun RoundedGreySquare() {
             style = Fill,
             size = Size(squareSize, squareSize),
             topLeft = Offset(size.width - squareSize, size.height - squareSize),
-            cornerRadius = CornerRadius(10f, 10f)
+            cornerRadius = CornerRadius(30f, 30f)
         )
     }
 }

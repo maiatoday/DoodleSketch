@@ -16,6 +16,8 @@ import net.maiatoday.tools.DOT_COUNT
 import net.maiatoday.tools.randomColor
 import net.maiatoday.tools.randomGrey
 import net.maiatoday.tools.randomOffset
+import net.maiatoday.ui.Persimmon
+import net.maiatoday.ui.Sky
 
 //region Triangle walk
 @Composable
@@ -24,7 +26,7 @@ fun TriangleWalk() {
     Canvas(modifier = drawModifier) {
         val path = Path()
         path.moveTo(0f, 0f)
-        path.lineTo(center.x, center.y)
+        path.lineTo(0f, center.y)
         path.lineTo(size.width, 0f)
         path.close()
         drawPath(path, Color.Magenta, style = Stroke(width = 10f))
@@ -59,7 +61,7 @@ fun HeartEdge() {
         drawPath(
             path = heartPath,
             color = Color.Magenta,
-            style = Stroke(width = 5f)
+            style = Stroke(width = 10f)
         )
     }
 }
@@ -129,7 +131,7 @@ fun HeartCenterSpin() {
         withTransform({
             translate(center.x, center.y)
             rotate(
-                degrees = 90f,
+                degrees = 100f,
                 pivot = Offset.Zero
             )
         }) {
@@ -154,8 +156,8 @@ fun HeartPulse() {
         )
     )
     val heartColor by infiniteTransition.animateColor(
-        initialValue = Color.Magenta,
-        targetValue = Color.Red,
+        initialValue = Sky,
+        targetValue = Persimmon,
         animationSpec = infiniteRepeatable(
             animation = tween(1000, easing = FastOutSlowInEasing),
             repeatMode = RepeatMode.Reverse

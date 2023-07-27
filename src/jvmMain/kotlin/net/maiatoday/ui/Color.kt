@@ -30,7 +30,7 @@ val sketchColors = listOf(
 
 @Preview
 @Composable
-fun previewColours() {
+fun PreviewColours() {
     Column {
         for (c in sketchColors) {
             Swatch(color = c)

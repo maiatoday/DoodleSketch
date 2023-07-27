@@ -27,9 +27,9 @@ fun OneLine() {
         )
         drawLine(
             color = Color.Black,
-            strokeWidth = 2f,
+            strokeWidth = 10f,
             start = center,
-            end = Offset(center.x+100, center.y-100)
+            end = Offset(center.x+100, center.y+150)
         )
 
     }
@@ -54,7 +54,7 @@ fun LotsOfLines() {
         for (line in lines) {
             drawLine(
                 color = Color.Black,
-                strokeWidth = 2f,
+                strokeWidth = 5f,
                 start = line.start,
                 end = line.end
             )
@@ -69,7 +69,7 @@ fun LotsOfRainbowLines() {
         for (line in lines) {
             drawLine(
                 color = randomColor(),
-                strokeWidth = 2f,
+                strokeWidth = 8f,
                 start = line.start,
                 end = line.end
             )
