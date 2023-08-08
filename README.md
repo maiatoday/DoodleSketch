@@ -5,24 +5,24 @@ Experiments in doodling in compose. The drawing part works equally well in Andro
 When was the last time you just experimented with pens and paper just drawing for fun and not for any specific reason.
 
 
-![](images/BeSquare.jpg)
+![](public/BeSquare.jpg)
 
-![](images/Heart.jpg)
+![](public/Heart.jpg)
 
-![](images/Dotty.jpg)
+![](public/Dotty.jpg)
 
 ---
 # BeSquare
 
 Exploring the Canvas coordinate system by drawing squares. The coordinate system looks like this:
 
-![](images/coordinates.jpg)
+![](public/coordinates.jpg)
 
 ---
 ## Dotty
 
 
-![](images/Dotty.jpg)
+![](public/Dotty.jpg)
 
 Circles filled and empty. Ellipses and ovals.
 ---
@@ -30,24 +30,24 @@ Circles filled and empty. Ellipses and ovals.
 The coordinate system again. 
 ### A line has two ends and a thickness.
 
-![](images/LotsOfLines.jpg)
+![](public/LotsOfLines.jpg)
 
 
 ---
 ## MyBrush
 
 
-![](images/MyBrushes.jpg)
+![](public/MyBrushes.jpg)
 
 Gradients in all directions
 ---
 ## SweetPath cubicTo
 
 ---
-![](images/bezier.jpg)
+![](public/bezier.jpg)
 ---
 
-![](images/JoinTheDots.jpg)
+![](public/JoinTheDots.jpg)
 
 Join the dots. Bezier curves. Translations and rotations. Here is a [site](http://blogs.sitepointstatic.com/examples/tech/canvas-curves/bezier-curve.html)
 that shows how the `cubicTo` method works. Also some animations.
@@ -76,17 +76,17 @@ The drawing part is almost identical between Desktop and Android.
 
 ---
 
-![](images/sadhearts_desktop.png)
+![](public/sadhearts_desktop.png)
 
 
-![](images/sadhearts_mobile.png)
+![](public/sadhearts_mobile.png)
 
 ---
 
-![](images/happyhearts_desktop.png)
+![](public/happyhearts_desktop.png)
 
 
-![](images/happyhearts_mobile.png)
+![](public/happyhearts_mobile.png)
 
 
 ---
@@ -96,6 +96,6 @@ Setup some choices and draw from the choices. Drawing libraries typically have a
 ---
 
 
-![](images/DoodleSketch.png)
+![](public/DoodleSketch.png)
 ---
 ### www.github.com/maiatoday/DoodleSketch
