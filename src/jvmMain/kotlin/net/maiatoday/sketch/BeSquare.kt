@@ -22,11 +22,12 @@ import net.maiatoday.ui.*
 @Composable
 @Preview
 fun BlueSquare() {
-    val squareSize = 150f
     Canvas(modifier = drawModifier.padding(8.dp)) {
+        val squareSize = 80.dp.toPx()
+        val strokeWidth = 8.dp.toPx()
         drawRect(
             color = Bluebell,
-            style = Stroke(width = 20f),
+            style = Stroke(width = strokeWidth),
             size = Size(squareSize, squareSize)
         )
     }
