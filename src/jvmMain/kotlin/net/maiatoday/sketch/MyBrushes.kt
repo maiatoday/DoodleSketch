@@ -20,10 +20,10 @@ import net.maiatoday.ui.Persimmon
 import net.maiatoday.ui.Sky
 
 //region Gradient Brush
-//val brush = Brush.verticalGradient(listOf(Persimmon, Sky))
-val brush = Brush.horizontalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
-//val brush = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.LightGray))
-//val brush = Brush.radialGradient(listOf(Minty, Sky, Bluebell))
+val brush = Brush.verticalGradient(listOf(Persimmon, Sky))
+val brush1 = Brush.horizontalGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.Red))
+val brush2 = Brush.radialGradient(listOf(Color.Red, Color.Magenta, Color.White, Color.LightGray))
+val brush3 = Brush.radialGradient(listOf(Minty, Sky, Bluebell))
 
 @Composable
 @Preview

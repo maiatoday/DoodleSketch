@@ -17,7 +17,7 @@ import kotlin.random.Random
 //region Magenta Circle
 @Composable
 @Preview
-fun MagentaCircle() {
+fun PeachCircle() {
     Canvas(modifier = drawModifier) {
         drawCircle(
             color = Persimmon,

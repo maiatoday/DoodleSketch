@@ -8,7 +8,7 @@ import net.maiatoday.ui.Dove
 import net.maiatoday.ui.sketchColors
 import kotlin.random.Random
 
-fun randomThemeColor(): Color = sketchColors.random()
+fun randomThemeColor(): Color = sketchColors.random().color
 
 fun randomThemeGrey(): Color = listOf(Color.White, Dove, Charcoal, Color.Black).random()
 

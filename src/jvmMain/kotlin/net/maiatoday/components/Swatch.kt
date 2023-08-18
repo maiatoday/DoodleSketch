@@ -2,7 +2,9 @@ package net.maiatoday.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
@@ -34,12 +36,15 @@ fun DrawScope.roundedSwatch(color: Color = Color.LightGray, fill: Boolean = true
 }
 
 @Composable
-fun Swatch(color: Color = Color.LightGray, size: Dp = 48.dp) {
-    Box(
-        modifier =
-        Modifier.padding(8.dp)
-            .background(color)
-            .size(size)
-    )
+fun Swatch(color: Color = Color.LightGray, name:String, size: Dp = 48.dp) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Box(
+            modifier =
+            Modifier.padding(8.dp)
+                .background(color)
+                .size(size)
+        )
+        Text(name, color = color)
+    }
 }
 

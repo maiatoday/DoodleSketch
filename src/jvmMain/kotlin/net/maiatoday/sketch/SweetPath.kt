@@ -89,7 +89,8 @@ fun CandyHeart() {
         drawPath(
             path = heartPath,
             brush = customBrush,
-            style = Fill)
+            style = Fill
+        )
     }
 }
 //endregion
@@ -169,9 +170,11 @@ fun HeartPulse() {
             translate(center.x - heartSize.width / 2, center.y - heartSize.height / 2)
 
         }) {
-            drawPath(heartPath,
+            drawPath(
+                heartPath,
                 color = heartColor,
-                style = Fill)
+                style = Fill
+            )
         }
     }
 }
